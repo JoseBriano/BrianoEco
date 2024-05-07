@@ -1,0 +1,10 @@
+.cadas{
+    justify-content: center;
+    display: grid;
+    height: 50%;
+    width: 100%;
+}
+.enviar{
+    color: aliceblue;
+    background-color: black;
+}
