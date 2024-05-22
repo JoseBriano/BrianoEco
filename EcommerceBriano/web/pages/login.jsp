@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,6 +22,7 @@
     <a href="./redirect.jsp" id="voltar"><i class="fa-solid fa-arrow-left"></i></a>
     <div class="container">
         <div class="signin-signup">
+           
             <form action="logar" class="sign-in-form" enctype="multipart/form-data" method="get">
                 <h2 class="title">Logar</h2>
                 <div class="input-field">
@@ -33,8 +36,8 @@
                 </div>
                 <input type="submit" value="Login" class="btn">
 
-
-                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+                <img  class="image" src="assets/logo.png" alt="logo">
+                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>    
             </form>
             <form action="criar" class="sign-up-form" enctype="multipart/form-data" method="post">
                 <h2 class="title">Cadastro</h2>

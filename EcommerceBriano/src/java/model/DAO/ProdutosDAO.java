@@ -38,6 +38,7 @@ public class ProdutosDAO {
                 produto.setImagem(rs.getBytes("imagem"));
                 produto.setCategoria(rs.getString("categoria"));
                 produto.setDescricao(rs.getString("descricao"));
+                produto.setTamanho(rs.getString("tamanho"));
                 produto.setPreco(rs.getFloat("preco"));
                 produto.setQuantidade(rs.getInt("quantidade"));
                 
@@ -56,13 +57,14 @@ public class ProdutosDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareCall("INSERT INTO produtos(nome, imagem, categoria, descricao, preco, quantidade) VALUES (?,?,?,?,?,?)");
+            stmt = conexao.prepareCall("INSERT INTO produtos(nome, imagem, categoria, descricao, tamanho, preco, quantidade) VALUES (?,?,?,?,?,?,?)");
             stmt.setString(1, produto.getNome());
             stmt.setBytes(2, produto.getImagem());
             stmt.setString(3, produto.getCategoria());
             stmt.setString(4, produto.getDescricao());
-            stmt.setFloat(5, produto.getPreco());
-            stmt.setInt(6, produto.getQuantidade());
+            stmt.setString(5, produto.getTamanho());
+            stmt.setFloat(6, produto.getPreco());
+            stmt.setInt(7, produto.getQuantidade());
             stmt.executeUpdate();
 
             stmt.close();
@@ -93,6 +95,7 @@ public class ProdutosDAO {
                 produto.setImagem(rs.getBytes("imagem"));
                 produto.setCategoria(rs.getString("categoria"));
                 produto.setDescricao(rs.getString("descricao"));
+                produto.setTamanho(rs.getString("tamanho"));
                 produto.setPreco(rs.getFloat("preco"));
                 produto.setQuantidade(rs.getInt("quantidade"));
                 
@@ -123,6 +126,7 @@ public class ProdutosDAO {
                 prt.setImagem(rs.getBytes("imagem"));
                 prt.setCategoria(rs.getString("categoria"));
                 prt.setDescricao(rs.getString("descricao"));
+                prt.setTamanho(rs.getString("tamanho"));
                 prt.setPreco(rs.getFloat("preco"));
                 prt.setQuantidade(rs.getInt("quantidade"));
                 produto.add(prt);

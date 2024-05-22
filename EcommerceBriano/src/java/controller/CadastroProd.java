@@ -101,9 +101,10 @@ Produtos produto = new Produtos();
         produto.setNome(request.getParameter("nome"));
         produto.setCategoria(request.getParameter("categoria"));
         produto.setDescricao(request.getParameter("descricao"));
+        produto.setTamanho(request.getParameter("tamanho"));
         produto.setPreco(Float.parseFloat(request.getParameter("preco")));
         produto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
-        if (produto.getNome().trim().equals("") || produto.getCategoria().trim().equals("") || produto.getDescricao().trim().equals("")) {
+        if (produto.getNome().trim().equals("") || produto.getCategoria().trim().equals("") || produto.getDescricao().trim().equals("") || produto.getTamanho().trim().equals("")) {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Por favor, preencha todos os campos.');");
             out.println("window.location.href = './CadastroProd;");

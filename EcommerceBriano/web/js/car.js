@@ -5,6 +5,9 @@ document.querySelectorAll('.btn-comprar').forEach(btn => {
         var nome = this.getAttribute('data-nome');
         var preco = this.getAttribute('data-preco');
         var imagem = this.getAttribute('data-imagem');
+        var quantidade = this.getAttribute('data-quantidade');
+        var tamanho = this.getAttribute('data-tamanho');
+        
         
         // Crie um novo objeto FormData
         var formData = new FormData();
@@ -12,8 +15,10 @@ document.querySelectorAll('.btn-comprar').forEach(btn => {
         // Adicione os dados do produto ao FormData
         formData.append('idProduto', idProduto);
         formData.append('descricao', descricao);
-        formData.append('nome', nome);
+        formData.append('nomeCarrinho', nome);
         formData.append('preco', preco);
+        formData.append('quantidade',quantidade);
+        formData.append('tamanho',tamanho);
         
         // Crie um Blob a partir do base64 da imagem
         var byteCharacters = atob(imagem);
@@ -35,8 +40,11 @@ document.querySelectorAll('.btn-comprar').forEach(btn => {
         .then(response => {
             if (!response.ok) {
                 throw new Error('Ocorreu um erro ao enviar o formulário.');
+            }else{
+                alert('Produto adicionado ao carrinho!');
+                window.location.href = 'redirect.jsp';
             }
-            // Faça algo após o formulário ser enviado com sucesso, se necessário
+           
         })
         .catch(error => {
             console.error('Erro:', error);

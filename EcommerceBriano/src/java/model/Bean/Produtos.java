@@ -13,8 +13,6 @@ import java.util.Base64;
  */
 public class Produtos {
     private int idProdutos;
-
-   
     
     public int getIdProdutos() {
         return idProdutos;
@@ -27,6 +25,19 @@ public class Produtos {
     private byte[] imagem;
     private String categoria;
     private String descricao;
+    private String tamanho;
+
+    public String getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public Produtos(String tamanho) {
+        this.tamanho = tamanho;
+    }
     private float preco;
     private int quantidade;
 

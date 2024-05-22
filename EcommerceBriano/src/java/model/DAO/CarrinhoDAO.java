@@ -33,15 +33,16 @@ public class CarrinhoDAO {
                 Carrinho cro = new Carrinho();
                 cro.setIdCarrinho(rs.getInt("idCarrinho"));
                 cro.setNomeCarrinho(rs.getString("nome_carrinho"));
-                cro.setImagem(rs.getBytes("imagem_carrinho"));
-                cro.setCategoriaCarrinho(rs.getString("categoria_carrinho"));
+                cro.setImagemCarrinho(rs.getBytes("imagem"));
                 cro.setDescricaoCarrinho(rs.getString("descricao_carrinho"));
+                cro.setTamanho(rs.getInt("tamanho"));
                 cro.setPrecoCarrinho(rs.getFloat("preco_carrinho"));
                 cro.setQuantidadeCarrinho(rs.getInt("quantidade_carrinho"));
                 cro.setIdProdutos(rs.getInt("idProdutos"));
+                cro.setIdUsuario(rs.getInt("idUsuario"));
                 carrinho.add(cro);
             }
-
+            
             rs.close();
             stmt.close();
             conexao.close();
@@ -57,13 +58,14 @@ public class CarrinhoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("INSERT INTO carrinho(nome_carrinho, imagem_carrinho, descricao_carrinho, preco_carrinho, quantidade_carrinho, idProdutos)VALUES(?,?,?,?,?,?)");
+            stmt = conexao.prepareStatement("INSERT INTO carrinho(nome_carrinho, imagem, descricao_carrinho, tamanho, preco_carrinho, quantidade_carrinho, idProdutos)VALUES(?,?,?,?,?,?,?)");
             stmt.setString(1, carrinho.getNomeCarrinho());
-            stmt.setBytes(2, carrinho.getImagem());
+            stmt.setBytes(2, carrinho.getImagemCarrinho());
             stmt.setString(3, carrinho.getDescricaoCarrinho());
-            stmt.setFloat(4, carrinho.getPrecoCarrinho());
-            stmt.setInt(5, carrinho.getQuantidadeCarrinho());
-            stmt.setInt(6, carrinho.getIdProdutos());
+            stmt.setInt(4, carrinho.getTamanho());
+            stmt.setFloat(5, carrinho.getPrecoCarrinho());
+            stmt.setInt(6, carrinho.getQuantidadeCarrinho());
+            stmt.setInt(7, carrinho.getIdProdutos());
             stmt.executeUpdate();
 
             stmt.close();

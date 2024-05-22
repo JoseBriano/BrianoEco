@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -57,6 +59,7 @@
           <input class="form-control mr-sm-2" type="search" placeholder="O que deseja?" aria-label="Pesquisar">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
               class="fa-solid fa-magnifying-glass"></i></button>
+              <a class="btn btn-outline-succes my-2 my-sm-3" href="./CarrinhoController"><i class="fa-solid fa-cart-shopping"></i></a>
           <a href="./Login" class="btn btn-outline-succes my-2 my-sm-1" type="submit"><i
               class="fa-regular fa-user"></i></a>
         </form>

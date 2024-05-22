@@ -34,7 +34,7 @@ public class ProdutoInd extends HttpServlet {
     Carrinho objProduto = new Carrinho();
     CarrinhoDAO objProdutoDao = new CarrinhoDAO();
 
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ProdutosDAO produto = new ProdutosDAO();
         int id = Integer.parseInt(request.getParameter("id"));
@@ -77,18 +77,20 @@ public class ProdutoInd extends HttpServlet {
         }
         byte[] imageBytes = outputStream.toByteArray();
 
-        objProduto.setNomeCarrinho(request.getParameter("nome"));
+        objProduto.setNomeCarrinho(request.getParameter("nomeCarrinho"));
         objProduto.setPrecoCarrinho(Float.parseFloat(request.getParameter("preco")));
         objProduto.setDescricaoCarrinho(request.getParameter("descricao"));
-        objProduto.setImagem(imageBytes);
+        objProduto.setImagemCarrinho(imageBytes);
         objProduto.setQuantidadeCarrinho(Integer.parseInt(request.getParameter("quantidade")));
+        objProduto.setTamanho(Integer.parseInt(request.getParameter("tamanho")));
         objProduto.setIdProdutos(Integer.parseInt(request.getParameter("idProduto")));
         objProdutoDao.create(objProduto);
         out.println("<script type=\"text/javascript\">");
         out.println("alert('Comprafeita com sucesso.');");
         out.println("window.location.href = './pages/produto.jsp';");
         out.println("</script>");
-        response.sendRedirect("./home");
+        response.sendRedirect("redirect.jsp");
+      
 
     }
 
