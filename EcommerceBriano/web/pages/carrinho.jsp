@@ -2,7 +2,6 @@
   <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@ page import="model.Bean.Produtos" %>
       <%@ page import="model.DAO.ProdutosDAO" %>
-
         <!DOCTYPE html>
         <html lang="pt-br">
 
@@ -26,7 +25,6 @@
           <link rel="stylesheet" href="styles/promo.css">
           <link rel="stylesheet" href="styles/carrinho.css">
           <link rel="icon" href="assets/logo.png">
-
           <title>Carrinho</title>
         </head>
 
@@ -41,36 +39,11 @@
               <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="redirect.jsp"><i class="fa-solid fa-house"></i> Home <span
-                        class="sr-only">(página
+                    <a class="nav-link" href="redirect.jsp"><i class="fa-solid fa-house"></i> Home <i
+                        class="fa-solid fa-house"></i><span class="sr-only">(página
                         atual)</span></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./Promocoes"><i class="fa-solid fa-fire" style="color: #ea3434;"></i>
-                      Promoções</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fa-solid fa-tags" style="color: #307e66;"></i> Categoria
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="./Masculina"><i class="fa-solid fa-person"
-                          style="color: #005eff;"></i>
-                        Masculina</a>
-                      <a class="dropdown-item" href="./Feminina"><i class="fa-solid fa-person-dress"
-                          style="color: #fa00e5;"></i> Feminina</a>
-                    </div>
-                  </li>
-
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="O que deseja?" aria-label="Pesquisar">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
-                      class="fa-solid fa-magnifying-glass"></i></button>
-                  <a href="./Login" class="btn btn-outline-succes my-2 my-sm-1" type="submit"><i
-                      class="fa-regular fa-user"></i></a>
-                </form>
               </div>
             </nav>
           </header>
@@ -89,7 +62,6 @@
                 </div>
               </c:forEach>
             </div>
-
             <c:forEach items="${carrinhos1}" var="carrinho">
               <div class="content">
                 <h2 class="text">Total:</h2>
@@ -99,30 +71,22 @@
           </main>
           <footer>
             <div class="redes">
-    
-              <a href="https://www.instagram.com/run_sotre/" class="btn btn-outline-succes my-2 my-sm-1" type="submit"><i
-                  class="fa-brands fa-instagram"></i></a>
+
+              <a href="https://www.instagram.com/run_sotre/" class="btn btn-outline-succes my-2 my-sm-1"
+                type="submit"><i class="fa-brands fa-instagram"></i></a>
               <a href="https://www.facebook.com/profile.php?id=100012932593794&locale=pt_BR"
                 class="btn btn-outline-succes my-2 my-sm-1" type="submit"><i class="fa-brands fa-facebook"></i></a>
               <a href="https://wa.me/5543996898525" class="btn btn-outline-succes my-2 my-sm-1" type="submit"><i
                   class="fa-brands fa-whatsapp"></i></a>
-    
-    
+
+
             </div>
             &copy; Todos os direitos reservados a Briano
-          </footer> 
-
+          </footer>
           <script src="https://kit.fontawesome.com/1634f6c9c7.js" crossorigin="anonymous"></script>
           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-          <script src="js/car.js"></script>
         </body>
 
         </html>
